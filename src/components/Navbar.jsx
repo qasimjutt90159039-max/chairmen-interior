@@ -44,30 +44,30 @@ export default function Navbar() {
             : 'bg-luxury-obsidian/75 backdrop-blur-sm border-b border-white/5 py-4 lg:py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-4">
           {/* Logo Branding */}
-          <Link to="/" className="group flex flex-col items-start focus:outline-none">
+          <Link to="/" className="group flex flex-col items-start focus:outline-none shrink-0">
             <div className="flex items-center gap-2">
-              <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.18em] text-luxury-offwhite group-hover:text-luxury-bronze transition-colors">
+              <span className="font-cinzel text-xl sm:text-2xl font-bold tracking-[0.18em] text-luxury-offwhite group-hover:text-luxury-bronze transition-colors whitespace-nowrap">
                 CHAIRMAN
               </span>
-              <span className="font-serif italic text-base sm:text-lg text-luxury-bronze font-light">
+              <span className="font-serif italic text-base sm:text-lg text-luxury-bronze font-light whitespace-nowrap">
                 Interiors
               </span>
             </div>
-            <span className="text-[9px] sm:text-[10px] tracking-[0.24em] uppercase text-stone-400 font-medium mt-0.5">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.24em] uppercase text-stone-400 font-medium mt-0.5 whitespace-nowrap">
               PVC Panels • Wallpapers • Interiors
             </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center space-x-7">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7 shrink-0">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
                 className={({ isActive }) =>
-                  `text-xs tracking-wider uppercase font-medium transition-colors relative py-1 hover:text-luxury-bronze ${
+                  `text-[11px] xl:text-xs tracking-wider uppercase font-medium transition-colors relative py-1.5 whitespace-nowrap hover:text-luxury-bronze ${
                     isActive
                       ? 'text-luxury-bronze font-semibold'
                       : 'text-stone-300'
@@ -87,27 +87,27 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA & Direct Phone */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-4 shrink-0">
             <a
               href={businessInfo.phoneTel}
-              className="flex items-center text-xs tracking-wider text-stone-300 hover:text-luxury-bronze transition-colors py-2 px-3 rounded border border-white/10 hover:border-luxury-bronze/40"
+              className="hidden xl:flex items-center text-xs tracking-wider text-stone-300 hover:text-luxury-bronze transition-colors py-2 px-3 rounded border border-white/10 hover:border-luxury-bronze/40 whitespace-nowrap shrink-0"
               title="Call Chairman Interiors Lahore"
             >
-              <Phone className="w-3.5 h-3.5 mr-2 text-luxury-bronze" />
-              <span className="font-mono text-xs">{businessInfo.phoneDisplay}</span>
+              <Phone className="w-3.5 h-3.5 mr-2 text-luxury-bronze shrink-0" />
+              <span className="font-mono text-xs whitespace-nowrap">{businessInfo.phoneDisplay}</span>
             </a>
 
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-widest bg-luxury-bronze text-luxury-black hover:bg-luxury-bronzeLight transition-all duration-300 shadow-md hover:shadow-luxury-bronze/20 group"
+              className="inline-flex items-center justify-center px-4 xl:px-5 py-2.5 text-xs font-semibold uppercase tracking-widest bg-luxury-bronze text-luxury-black hover:bg-luxury-bronzeLight transition-all duration-300 shadow-md hover:shadow-luxury-bronze/20 group whitespace-nowrap shrink-0"
             >
               <span>Let's Talk</span>
-              <ArrowUpRight className="ml-1.5 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="ml-1.5 w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shrink-0" />
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex items-center lg:hidden gap-3">
+          {/* Mobile / Tablet Hamburger Button (< lg) */}
+          <div className="flex items-center lg:hidden gap-3 shrink-0">
             <a
               href={businessInfo.phoneTel}
               className="p-2 text-luxury-bronze border border-white/10 rounded-sm"
